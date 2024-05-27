@@ -1,1 +1,12 @@
-key: value
+# In this file we kwwp key value random pairs if we leave empty then it may give an issue.
+# So that whenever we load params.yaml file it will not give any error.
+# Whenever defining a model at that time the key value pairs are updated.
+
+AUGUMENTATION: True
+IMAGE_SIZE: [224,224,3]
+BATCH_SIZE: 8
+INCLUDE_TOP: False
+EPOCHS: 1
+CLASSES: 2
+WEIGHTS: imagenet
+LEARNING_RATE: 0.1
