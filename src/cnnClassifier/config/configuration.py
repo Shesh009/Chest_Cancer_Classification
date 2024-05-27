@@ -1,7 +1,7 @@
 # 5. Update the configuration manager in src config
 import os
 from cnnClassifier.constants import *
-from cnnClassifier.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, TrainingConfig
+from cnnClassifier.entity.config_entity import DataIngestionConfig, EvaluationConfig, PrepareBaseModelConfig, TrainingConfig
 from cnnClassifier.utils.common import read_yaml,create_directories
 
 class ConfigurationManager:
@@ -74,3 +74,15 @@ class ConfigurationManager:
         )
 
         return training_config
+    
+    def get_evaluation_config(self):
+        eval_config=EvaluationConfig(
+            path_of_model=Path("model/model.h5"),
+            training_data=Path("artifacts\data_ingestion\Data"),
+            mlflow_uri="https://dagshub.com/Shesh009/Chest_Cancer_Classification.mlflow",
+            all_params=self.params,
+            params_batch_size=self.params.BATCH_SIZE,
+            params_image_size=self.params.IMAGE_SIZE
+        )
+
+        return eval_config

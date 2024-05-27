@@ -1,9 +1,12 @@
 # 6. Update the components
 
 import os
+from pathlib import Path
+import shutil
 import urllib.request as request
 from zipfile import ZipFile
 import tensorflow as tf
+from cnnClassifier import logger
 import time
 from cnnClassifier.entity.config_entity import TrainingConfig
 
@@ -79,3 +82,14 @@ class Training:
              path=self.config.trained_model_path,
              model=self.model
         )
+
+        try:
+             if os.path.exists("model"):
+                  shutil.rmtree("model")
+                  logger.info("Existing Model deleted")
+             os.makedirs("model")
+             self.save_model(path=Path("model/model.h5"),model=self.model)
+             logger.info("Model saved locally")
+        except Exception as e:
+             logger.exception(e)
+             raise e

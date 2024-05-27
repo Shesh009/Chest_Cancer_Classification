@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Medha%20Trust/Desktop/Auto/Chest_Cancer_Classification/mlruns/0/ea85cd409e9b4ee197a2c8c9295360cb/artifacts
+end_time: 1716835167944
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ea85cd409e9b4ee197a2c8c9295360cb
+run_name: calm-whale-537
+run_uuid: ea85cd409e9b4ee197a2c8c9295360cb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716835148681
+status: 3
+tags: []
+user_id: Medha Trust
