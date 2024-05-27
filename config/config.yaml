@@ -1,0 +1,16 @@
+# It will download the data from the given link which is known as artifacts
+# The dataset is stored in artifacts folder.
+# The component generating folder is artifacts.
+# The downloaded data will stay in data ingestion folder as data.zip
+# Then after unzipping the data will be in the folder atrifacts/data_ingestion
+# Once the link is changed in this .yaml file and run the .yaml file then all the data is loaded.
+
+artifacts_root: artifacts
+
+# This is data ingestion configuration.
+
+data_ingestion:       # This is data ingestion configuration.
+  root_dir: artifacts/data_ingestion
+  source_url: https://drive.google.com/file/d/1XIAroODvoYEPNA8UwI38x7ZXsOneWRpj/view?usp=drive_link  # We have to give the url of the google drive link of the file uploaded in google drive
+  local_data_file : artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion/Data
